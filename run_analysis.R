@@ -27,7 +27,13 @@ neededFeatures <- grep(".*mean.*|.*std.*",features[,2])
 featuresNames <- features[foundFeatures, 2]
 #clean up names a bit
 featuresNames <- gsub("-mean", "Mean",featuresNames)
-featuresNames <- gsub("-std", "StdDev",featuresNames)
+featuresNames <- gsub("-std", "StandardDeviation",featuresNames)
+featuresNames <- gsub("^t", "time", featuresNames)
+featuresNames <- gsub("^f", "frequency", featuresNames)
+featuresNames <- gsub("Acc", "Accelerometer", featuresNames)
+featuresNames <- gsub("Gyro", "Gyroscope", featuresNames)
+featuresNames <- gsub("Gyro", "Gyroscope", featuresNames)
+featuresNames <- gsub("Mag", "Magnitude", featuresNames)
 featuresNames <- gsub("[-()]", "",featuresNames)
 
 #prepare activity labels
@@ -52,7 +58,7 @@ testSubjectsData <- read.table("UCI HAR Dataset/test/subject_test.txt")
 mergedSubjectsData <- rbind(trainSubjectsData, testSubjectsData)
 
 mergedData <- cbind(mergedSubjectsData, mergedActivitiesData, mergedData)
-
+  
 #set names
 colnames(mergedData) <- c("subject", "activity", featuresNames)
 
