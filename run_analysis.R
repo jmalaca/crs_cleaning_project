@@ -32,7 +32,6 @@ featuresNames <- gsub("^t", "time", featuresNames)
 featuresNames <- gsub("^f", "frequency", featuresNames)
 featuresNames <- gsub("Acc", "Accelerometer", featuresNames)
 featuresNames <- gsub("Gyro", "Gyroscope", featuresNames)
-featuresNames <- gsub("Gyro", "Gyroscope", featuresNames)
 featuresNames <- gsub("Mag", "Magnitude", featuresNames)
 featuresNames <- gsub("[-()]", "",featuresNames)
 
