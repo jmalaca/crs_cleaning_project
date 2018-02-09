@@ -93,3 +93,24 @@ Dataset consists of 180 observations of 79 variables for for subject and activit
 - frequencyBodyBodyGyroscopeJerkMagnitudeStandardDeviation
 - frequencyBodyBodyGyroscopeJerkMagnitudeMeanFreq
 
+## Processing
+We are using data from https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip
+
+Used files:
+- features.txt - to extract feature names
+- activity_labels.txt - to extract activity labels
+- train and test dataset - dataset with all measurements
+
+Processing steps:
+1. Extract and select desired feature names.
+2. Clean up feature names
+3. Read activities data set
+4. Read and merge X_train and X_test datasets
+5. Read and merge Y_train and Y_test datasets
+6. Read and merge subject_train and subject_test datasets
+7. Merge X, Y, subject datasets
+8. Set column names
+9. Factorize subject and activity
+10. Melt dataset by subject and activity
+11. Calculate mean data
+12. Write result to result.txt file
